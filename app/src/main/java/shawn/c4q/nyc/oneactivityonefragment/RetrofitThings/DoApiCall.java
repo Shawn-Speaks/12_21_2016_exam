@@ -32,7 +32,6 @@ public class DoApiCall {
                 Log.d(TAG, "SUCCESS");
                 Wrapper wrapper = response.body();
                 animals = wrapper.getAnimals();
-                setAnimals(animals);
             }
 
             @Override
@@ -46,7 +45,4 @@ public class DoApiCall {
         return animals;
     }
 
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
-    }
 }

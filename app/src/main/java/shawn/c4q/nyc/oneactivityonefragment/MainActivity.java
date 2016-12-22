@@ -13,7 +13,7 @@ import shawn.c4q.nyc.oneactivityonefragment.RetrofitThings.APIservice;
 
 public class MainActivity extends AppCompatActivity {
 
-    RelativeLayout relativeLayout
+    RelativeLayout relativeLayout;
     APIservice apIservice;
     TextView tv1;
     TextView tv2;
@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        createFragmentHoster(new SingleFragment());
 //        apIservice = UrlBuilder.makeService();
 //        DoApiCall d = new DoApiCall();
 //        d.DoApiCall(apIservice);
-        createFragmentHoster(new SingleFragment());
 //        List<Animal> animals = d.getAnimals();
 //        setTv1(animals.get(0));
 
@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void setTv1(Animal animal){
-        private final Animal a = animal
+    private void setTv1(Animal animal){
+        final Animal a = animal;
         tv1 = (TextView) findViewById(R.id.tv_1);
         tv1.setTextColor(Color.parseColor(a.getTextColor()));
         tv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                relativeLayout.setBackground(a.getBackground());
+//                relativeLayout.setBackground(Color.parseColor(a.getBackground()));
             }
         });
 

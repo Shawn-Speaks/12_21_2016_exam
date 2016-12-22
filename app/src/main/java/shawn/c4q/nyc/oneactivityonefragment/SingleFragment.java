@@ -19,8 +19,6 @@ public class SingleFragment extends Fragment {
 
     APIservice apIservice;
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
